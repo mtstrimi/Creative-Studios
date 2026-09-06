@@ -33,7 +33,7 @@ export default function Login() {
   return (
     <div className="login-shell">
       <form className="login-card" onSubmit={onSubmit}>
-        <h1>Content Kalender</h1>
+        <img className="login-logo" src="/logo.png" alt="Creative Studios" />
         <p>Zugang nur für das Team. Bitte Passwort eingeben.</p>
         <input
           type="password"

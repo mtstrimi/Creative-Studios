@@ -69,7 +69,10 @@ export default function Home() {
     <div className="shell">
       <header className="topbar">
         <div className="topbar-row">
-          <h1>Content Kalender</h1>
+          <div className="brand">
+            <img className="brand-logo" src="/logo.png" alt="Creative Studios" />
+            <h1>Content Kalender</h1>
+          </div>
           {sortedClients.length > 0 && (
             <ul className="legend">
               {sortedClients.map((c) => (
