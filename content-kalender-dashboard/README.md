@@ -7,7 +7,7 @@ Content-Art** (Reel/Beitrag/Story), **Logo (oder Farbpunkt) + Name
 zeigen den Kunden** — beides auf einen Blick erkennbar. Klick auf einen
 Eintrag öffnet den passenden Notion-Datensatz in einem neuen Tab.
 Gedacht zum Deployen (z. B. Vercel) und anschließenden Einbetten per
-Notion-"Embed"-Block .
+Notion-"Embed"-Block.
 
 Alle Schritte unten sind so geschrieben, dass sie ohne Programmierkenntnisse
 durchführbar sind.
