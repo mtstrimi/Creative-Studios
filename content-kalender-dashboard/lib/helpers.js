@@ -1,15 +1,14 @@
-// Feste, gut unterscheidbare Palette für bis zu 8 Kunden gleichzeitig — nur
-// noch für den kleinen Farbpunkt neben dem Kundennamen, nicht mehr für den
-// Hintergrund der Kalendereinträge (der richtet sich jetzt nach Content-Art).
+// Zurückhaltende, an Apples Systemfarben angelehnte Palette für bis zu 8
+// Kunden gleichzeitig — nur für den kleinen Farbpunkt neben dem Kundennamen.
 const PALETTE = [
-  { c: "#2F6F76", tint: "#E3EEEE" },
-  { c: "#A63D5D", tint: "#F5E8EC" },
-  { c: "#C98A2C", tint: "#F7EEDC" },
-  { c: "#3E4C8A", tint: "#E6E8F2" },
-  { c: "#6B7B3F", tint: "#ECEFE2" },
-  { c: "#A2472F", tint: "#F4E3DD" },
-  { c: "#1F7A6C", tint: "#E0EFEB" },
-  { c: "#6E4A7E", tint: "#EBE2EF" }
+  { c: "#0071E3", tint: "#EAF3FE" },
+  { c: "#AF52DE", tint: "#F7EEFC" },
+  { c: "#30B0C7", tint: "#E9F7F9" },
+  { c: "#5856D6", tint: "#EEEEFC" },
+  { c: "#FF2D55", tint: "#FFEEF2" },
+  { c: "#A2845E", tint: "#F5EFE7" },
+  { c: "#8E8E93", tint: "#F1F1F3" },
+  { c: "#00C7BE", tint: "#E5FBFA" }
 ];
 
 export function colorFor(name) {
@@ -22,11 +21,11 @@ export function colorFor(name) {
 
 // Farbe des Kalender-Eintrags richtet sich nach der Content-Art — so ist auf
 // einen Blick erkennbar, ob es sich um ein Reel, einen Beitrag oder eine
-// Story handelt, unabhängig vom Kunden.
+// Story handelt, unabhängig vom Kunden. Angelehnt an Apples Systemfarben.
 const CONTENT_ART_COLORS = {
-  Reel: { c: "#A63D5D", tint: "#F5E8EC" },
-  Beitrag: { c: "#3F7D4A", tint: "#E5F0E7" },
-  Story: { c: "#C07A1E", tint: "#F7ECDA" }
+  Reel: { c: "#FF3B30", tint: "#FFF0EF" },
+  Beitrag: { c: "#34C759", tint: "#EEFAF1" },
+  Story: { c: "#FF9500", tint: "#FFF6E9" }
 };
 
 export function normalizeArt(value) {
