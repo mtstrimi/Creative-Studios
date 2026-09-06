@@ -1,15 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --ink: #17171a;
-  --ink-2: #232227;
-  --paper: #f7f7f5;
-  --paper-2: #ffffff;
-  --line: #e4e1da;
-  --muted: #9b9890;
-  --muted-2: #57544d;
-  --radius: 3px;
-  --font-display: "Fraunces", Georgia, serif;
+  --white: #ffffff;
+  --panel: #f5f5f7;
+  --panel-2: #fbfbfc;
+  --ink: #1d1d1f;
+  --ink-2: #424245;
+  --muted: #6e6e73;
+  --muted-2: #86868b;
+  --line: #d2d2d7;
+  --line-soft: #e8e8ed;
+  --accent: #0071e3;
+  --radius: 10px;
+  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-ui: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -25,7 +28,7 @@ body,
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--white);
   color: var(--ink);
   font-family: var(--font-ui);
   font-size: 14px;
@@ -41,18 +44,20 @@ button {
   flex-direction: column;
   height: 100vh;
   min-height: 560px;
+  background: var(--white);
 }
 
 /* ---------- Top bar ---------- */
 
 .topbar {
   flex: 0 0 auto;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--white);
+  color: var(--ink);
   padding: 16px 28px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  border-bottom: 1px solid var(--line-soft);
 }
 
 .topbar-row {
@@ -63,18 +68,31 @@ button {
   flex-wrap: wrap;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
 .topbar h1 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 21px;
   letter-spacing: -0.01em;
   margin: 0;
+  color: var(--ink);
 }
 
 .subtitle {
   margin: 0;
   font-size: 12.5px;
-  color: rgba(247, 247, 245, 0.55);
+  color: var(--muted);
 }
 
 .legend {
@@ -87,23 +105,27 @@ button {
   font-size: 13px;
 }
 
+.legend.small {
+  font-size: 11.5px;
+  margin-top: 5px;
+}
+
 .legend li {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: rgba(247, 247, 245, 0.85);
+  color: var(--ink-2);
 }
 
 .legend .dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex: 0 0 auto;
 }
 
 .legend-art {
   margin-top: 4px;
-  font-size: 11.5px;
 }
 
 .monthnav {
@@ -116,28 +138,30 @@ button {
   min-width: 200px;
   text-align: center;
   font-variant-numeric: tabular-nums;
-  color: rgba(247, 247, 245, 0.85);
+  color: var(--ink-2);
   font-size: 13px;
 }
 
 .monthnav button {
-  background: transparent;
-  border: 1px solid rgba(247, 247, 245, 0.28);
-  color: inherit;
-  border-radius: var(--radius);
-  padding: 6px 11px;
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 6px 12px;
   cursor: pointer;
   font-size: 13px;
   line-height: 1;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .monthnav button:hover {
-  background: rgba(247, 247, 245, 0.1);
+  background: #ececef;
 }
 
 .monthnav button.today {
-  border-color: rgba(247, 247, 245, 0.5);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #eaf3fe;
 }
 
 /* ---------- Body layout ---------- */
@@ -149,37 +173,40 @@ button {
 }
 
 .sidebar {
-  flex: 0 0 268px;
-  width: 268px;
-  background: var(--ink-2);
-  color: var(--paper);
-  padding: 20px 16px;
+  flex: 0 0 272px;
+  width: 272px;
+  background: var(--panel);
+  color: var(--ink);
+  padding: 22px 18px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid var(--line-soft);
 }
 
 .sidebar .sidebar-heading {
   font-size: 11px;
-  color: rgba(247, 247, 245, 0.45);
+  color: var(--muted-2);
   margin: 0 0 4px 2px;
+  text-transform: none;
 }
 
 .client-card {
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: var(--radius);
-  padding: 12px 13px;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  padding: 14px 15px;
 }
 
 .client-card .client-name {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 15.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
+  color: var(--ink);
 }
 
 .client-card .dot {
@@ -190,30 +217,32 @@ button {
 }
 
 .client-card .client-logo {
-  width: 22px;
-  height: 22px;
-  border-radius: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   object-fit: cover;
   flex: 0 0 auto;
-  background: #fff;
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
 }
 
 .client-card .paket-name {
   font-size: 12.5px;
-  color: rgba(247, 247, 245, 0.75);
-  margin: 4px 0 0 17px;
+  color: var(--ink-2);
+  margin: 5px 0 0 33px;
+  font-weight: 500;
 }
 
 .client-card .paket-detail {
   font-size: 11.5px;
-  color: rgba(247, 247, 245, 0.5);
-  margin: 2px 0 0 17px;
-  line-height: 1.4;
+  color: var(--muted);
+  margin: 2px 0 0 33px;
+  line-height: 1.5;
 }
 
 .sidebar-empty {
   font-size: 12.5px;
-  color: rgba(247, 247, 245, 0.45);
+  color: var(--muted);
   line-height: 1.5;
 }
 
@@ -222,18 +251,19 @@ button {
 .calendars {
   flex: 1 1 auto;
   overflow: auto;
-  padding: 18px;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 16px;
+  gap: 18px;
   align-content: start;
+  background: var(--white);
 }
 
 .month-card {
-  background: var(--paper-2);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 14px;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -241,9 +271,10 @@ button {
 
 .month-card h2 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 16.5px;
-  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  color: var(--ink);
 }
 
 .weekdays {
@@ -251,9 +282,9 @@ button {
   grid-template-columns: repeat(7, 1fr);
   font-size: 10.5px;
   color: var(--muted-2);
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line-soft);
 }
 
 .weekdays span {
@@ -263,37 +294,39 @@ button {
 .daygrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: minmax(72px, 1fr);
-  gap: 3px;
+  grid-auto-rows: minmax(74px, 1fr);
+  gap: 4px;
 }
 
 .day {
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  padding: 4px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  background: var(--paper-2);
+  background: var(--white);
 }
 
 .day.out {
-  background: #fbfbfa;
-  color: var(--muted);
-  opacity: 0.6;
+  background: var(--panel-2);
+  color: var(--muted-2);
+  opacity: 0.7;
+  border-color: var(--line-soft);
 }
 
 .day.today {
-  border-color: var(--ink);
+  border-color: var(--accent);
   border-width: 1.5px;
+  background: #f5faff;
 }
 
 .day .num {
   font-size: 10.5px;
-  color: var(--muted-2);
-  margin-bottom: 2px;
+  color: var(--muted);
+  margin-bottom: 3px;
   font-variant-numeric: tabular-nums;
   flex: 0 0 auto;
 }
@@ -308,20 +341,20 @@ button {
 }
 
 .entry {
-  font-size: 10px;
-  line-height: 1.3;
-  padding: 2px 5px;
-  border-radius: 2px;
+  font-size: 9.5px;
+  line-height: 1.25;
+  padding: 3px 6px;
+  border-radius: 6px;
   cursor: pointer;
-  border-left: 3px solid var(--c, var(--ink));
-  background: var(--tint, var(--line));
+  border-left: 3px solid var(--c);
+  background: var(--tint);
   color: var(--ink);
   overflow: hidden;
   transition: transform 0.1s ease, filter 0.1s ease;
 }
 
 .entry:hover {
-  filter: brightness(0.96);
+  filter: brightness(0.97);
   transform: translateX(1px);
 }
 
@@ -333,6 +366,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--ink);
 }
 
 .entry-dot {
@@ -348,12 +382,12 @@ button {
   border-radius: 3px;
   object-fit: cover;
   flex: 0 0 auto;
-  background: #fff;
+  background: var(--white);
 }
 
 .entry-titel {
   display: block;
-  color: var(--muted-2);
+  color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -363,7 +397,7 @@ button {
 
 .state-message {
   margin: auto;
-  color: var(--muted-2);
+  color: var(--muted);
   font-size: 13.5px;
   max-width: 360px;
   text-align: center;
@@ -376,9 +410,9 @@ button {
   flex: 0 0 auto;
   padding: 10px 28px;
   font-size: 11.5px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-  background: var(--paper-2);
+  color: var(--muted-2);
+  border-top: 1px solid var(--line-soft);
+  background: var(--white);
 }
 
 /* ---------- Login page ---------- */
@@ -388,67 +422,79 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink);
+  background: var(--white);
   padding: 20px;
 }
 
 .login-card {
-  background: var(--ink-2);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 4px;
-  padding: 32px 28px;
+  background: var(--white);
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: 44px 40px 36px;
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.12);
 }
 
-.login-card h1 {
-  font-family: var(--font-display);
-  color: var(--paper);
-  font-size: 22px;
-  margin: 0;
+.login-logo {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 6px;
 }
 
 .login-card p {
   font-size: 13px;
-  color: rgba(247, 247, 245, 0.6);
+  color: var(--muted);
   margin: 0 0 6px 0;
+  text-align: center;
 }
 
 .login-card input {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  color: var(--paper);
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--ink);
   font-size: 14px;
+  text-align: center;
 }
 
 .login-card input:focus {
   outline: none;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: var(--accent);
+  background: var(--white);
 }
 
 .login-card button {
-  background: var(--paper);
-  color: var(--ink);
+  width: 100%;
+  background: var(--ink);
+  color: var(--white);
   border: none;
-  border-radius: var(--radius);
-  padding: 10px 12px;
+  border-radius: 10px;
+  padding: 12px 14px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.login-card button:hover {
+  opacity: 0.85;
 }
 
 .login-card button:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: default;
 }
 
 .login-error {
-  color: #e08585;
+  color: #d70015;
   font-size: 12.5px;
 }
 
@@ -469,7 +515,7 @@ button {
     display: none;
   }
   .client-card {
-    min-width: 210px;
+    min-width: 220px;
     flex: 0 0 auto;
   }
   .calendars {
@@ -478,12 +524,10 @@ button {
 }
 
 @media (max-width: 560px) {
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
   .topbar h1 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  .brand-logo {
+    height: 26px;
   }
 }
